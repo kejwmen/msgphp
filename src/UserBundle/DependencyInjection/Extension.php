@@ -15,7 +15,8 @@ use MsgPhp\User\Infra\Console\Command\{AddUserRoleCommand, CreatePendingUserComm
 use MsgPhp\User\Infra\Doctrine\Repository\{PendingUserRepository, UserAttributeValueRepository, UserRepository, UserRoleRepository, UserSecondaryEmailRepository};
 use MsgPhp\User\Infra\Doctrine\SqlEmailLookup;
 use MsgPhp\User\Infra\Doctrine\Type\UserIdType;
-use MsgPhp\User\Password\{PasswordHashing, PasswordHashingInterface};
+use MsgPhp\User\Infra\Security\PasswordHashing;
+use MsgPhp\User\Password\PasswordHashingInterface;
 use MsgPhp\User\Repository\UserRepositoryInterface;
 use MsgPhp\User\UserIdInterface;
 use Ramsey\Uuid\Uuid;

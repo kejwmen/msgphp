@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace MsgPhp\UserBundle\DependencyInjection;
 
 use MsgPhp\Domain\Infra\DependencyInjection\Bundle\ConfigHelper;
+use MsgPhp\User\Credential\CredentialInterface;
+use MsgPhp\User\Entity\Credential\Anonymous;
 use MsgPhp\User\Entity\User;
 use MsgPhp\User\Infra\Uuid\UserId;
 use MsgPhp\User\UserIdInterface;
@@ -30,6 +32,10 @@ final class Configuration implements ConfigurationInterface
                     $value += [
                         UserIdInterface::class => UserId::class,
                     ];
+                }
+
+                if (!isset($value[CredentialInterface::class])) {
+                    $value[CredentialInterface::class] = Anonymous::class;
                 }
 
                 return $value;
